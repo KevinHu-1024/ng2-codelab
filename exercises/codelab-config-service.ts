@@ -218,35 +218,35 @@ export class CodelabConfigService {
     files.test.fuzzyPipeUse = testFile('fuzzyPipeUse/Test', require(`!raw!./ng2ts/tests/fuzzyPipeUseTest.ts`));
 
     this.config = {
-      name: 'Angular2 codelab',
+      name: 'Angular2实验教程',
       selectedMilestoneIndex: 0,
       milestones: [
         {
-          name: 'Intro to TypeScript',
+          name: 'TypeScript概述',
           selectedExerciseIndex: 0,
           exercises: [
             {
-              name: 'Intro',
+              name: '概述',
               description: `
-          <h1>Welcome to the Angular and TypeScript CodeLab!</h1>
-          <p>In this codelab we're going to learn the basics of TypeScript and Angular.</p>
-          <p>We're using Angular version 2.1.0</p>
-          <p>The slides for the codelab are available using
-          <a href = "https://docs.google.com/presentation/d/1Wh4ZwTKG1h66f3mTD4GQO8rKwGDEJeBSvUDJ3udU1LA/edit?usp=sharing">here</a>.</p>                 
+          <h1>欢迎使用Angular2和TypeScript教程!</h1>
+          <p>在本教程中我们将学习TypeScript和Angular2的基础知识.</p>
+          <p>本教程使用的Angular是2.1.0版本</p>
+          <p>您可以从下面的链接找到相应的英文原版PPt(暂未翻译)
+          <a href = "https://docs.google.com/presentation/d/1Wh4ZwTKG1h66f3mTD4GQO8rKwGDEJeBSvUDJ3udU1LA/edit?usp=sharing">PPT链接</a>.</p>                 
         `,
               fileTemplates: [],
               tests: [],
-              messageNext: `Let's start`
+              messageNext: `开始吧`
             },
             {
-              name: 'Typescript',
+              name: 'Typescript语法介绍',
               description: `
-          <p>We created a TypeScript file for you, now let's add our first TS class
-           called Codelab.</p>
+          <p>首先在我们创建的TypeScript文件中(注意：TypeScript文件后缀为.ts)添加一个Codelab类
+           </p>
           
-          <p>It will take a list of guests, and will have a 'getGuestsComing' method, which will only return people who're coming.</p> 
-          <p>As you can see in the 'Main.ts' file we have 4 people signed up, but Charles Darwin had a last minute change of plans, 
-          so only 3 people should be returned.</p>            
+          <p>在当前TypeScript文件中有一个guests常量数组, 包含一个返回“谁将会来了”的 'getGuestsComing' 方法</p> 
+          <p>在 'Main.ts' 有4个人准备来, 但是Charles Darwin在最后却决定不来了, 
+          所以只有3个人能够来.</p>            
         `,
               solutions: [
                 files.codelab.codelabSolved
@@ -261,35 +261,35 @@ export class CodelabConfigService {
           ]
         },
         {
-          name: 'Bootstrapping your app',
+          name: '开始您的程序',
           selectedExerciseIndex: 0,
           exercises: [
             {
-              name: 'Intro',
+              name: '概述',
               description: `
-          <h1>Let's build our first Angular app!</h1>
-          <p>This is how it will look:</p>
+          <h1>编写您的第一个Angular2程序!</h1>
+          <p>如下图：</p>
 
           <div class = "inBrowser">
             <div class="smaller">
               <h1>Hello CatTube!</h1>
             </div>
           </div>
-          <p>3 simple steps: </p>
+          <p>三步曲: </p>
           <ol>
-            <li>Create a Component</li>
-            <li>Create a NgModule</li>
-            <li>Bootstrap the NgModule</li>
+            <li>创建组件</li>
+            <li>创建NgModule</li>
+            <li>启动程序</li>
           </ol>
         `,
               fileTemplates: [],
               tests: [],
-              messageNext: `I'm a ready, let's start!`
+              messageNext: `准备就绪,开始吧!`
             },
             {
-              name: 'Create a component',
+              name: '创建组件',
               description: `
-            <p>Let's create our first component!</p>`,
+            <p>创建第一个组件!</p>`,
               solutions: [
                 files.appComponent.createComponentSolved
               ],
@@ -302,8 +302,8 @@ export class CodelabConfigService {
                 files.test.createComponent
               ]
             }, {
-              name: 'Create a NgModule',
-              description: `Now we got the component, we need to pass it to a NgModule.`,
+              name: '创建NgModule',
+              description: `当组件创建完成后，我们需要创建 NgModule.`,
               solutions: [
                 files.appModule.createModuleSolved
               ],
@@ -319,11 +319,11 @@ export class CodelabConfigService {
               ]
             },
             {
-              name: 'Bootstrap the module',
+              name: '启动程序',
               skipTests: true,
               description: `
-          <p>Now we got both NgModule and component ready, let's bootstrap the app!</p>
-          <p>There's no  simple way to test it,  make sure your app displays: 'Hello CatTube!'</p>`,
+          <p>创建好组件和NgModule后，我们就可以通过bootstrap启动程序!</p>
+          <p>此处没有太好的测试方法，所以我们只能让程序显示 'Hello CatTube!'</p>`,
               solutions: [
                 files.bootstrap.bootstrapSolved
               ],
@@ -339,14 +339,14 @@ export class CodelabConfigService {
           ]
         },
         {
-          name: 'Templates',
+          name: '模板',
           selectedExerciseIndex: 0,
           exercises: [
             {
-              name: 'Intro',
+              name: '概述',
               description: `
-          <h1>Let's explore Angular templates!</h1>
-          <p>As a result we'll see our cats displayed.</p>
+          <h1>了解Angular的模板!</h1>
+          <p>如下图.</p>
           
           <div class = "inBrowser">
             <div class="smaller">
@@ -373,8 +373,8 @@ export class CodelabConfigService {
               messageNext: `I'm a ready, let's start!`
             },
             {
-              name: 'Set up the page',
-              description: `Let's setup a header, a search box, and a search button in the app component!`,
+              name: '创建页面',
+              description: `在组件中加入一个header标签, 一个input文本框和一个查找按钮button !`,
               solutions: [
                 files.appHtml.templatePageSetupSolved
               ],
@@ -389,11 +389,11 @@ export class CodelabConfigService {
               ],
               tests: []
             }, {
-              name: 'Add some action',
-              description: `Let's do two things here: 
+              name: '添加事件',
+              description: `主要做以下2件事情: 
               <ul>
-              <li>Add a search method to the AppComponent</li>
-              <li>Display a message when there are no videos.</li>`,
+              <li>在AppComponent中添加一个查找方法</li>
+              <li>当video对象为空时，进行适当提示</li>`,
               solutions: [
                 files.appHtml.templateAddActionSolved,
                 files.appComponent.templateAddActionSolved,
@@ -410,8 +410,8 @@ export class CodelabConfigService {
               ],
               tests: []
             }, {
-              name: 'Display all videos',
-              description: `Finally let's iterate over the videos.`,
+              name: '展示所有videos',
+              description: `循环显示所有videos.`,
               solutions: [
                 files.appComponent.templateAllVideosSolved,
                 files.appHtml.templateAllVideosSolved,
@@ -431,13 +431,13 @@ export class CodelabConfigService {
           ]
         },
         {
-          name: 'Dependency Injection',
+          name: '依赖注入',
           selectedExerciseIndex: 0,
           exercises: [{
-            name: 'Intro',
+            name: '概述',
             description: `
-          <h1>Let's inject a service.</h1>
-          <p>Using a service is way better than hardcoded data. As a result we get even more cats.</p>
+          <h1>开始注入服务.</h1>
+          <p>使用服务好处是减少硬编码的耦合性，无需在对象中new引用的对象，并且我们能及时获得更多数据.</p>
           
           <div class = "inBrowser">
             <div class="smaller">
@@ -476,9 +476,9 @@ export class CodelabConfigService {
             tests: [],
             messageNext: `I'm a ready, let's start!`
           }, {
-            name: 'Service injection',
+            name: '服务注入',
             description: `
-          Let's fetch the videos using a service, instead of having them hardcoded.
+          用服务来替代硬编码循（如：videos=new videos()）环数据集videos.
         `,
             solutions: [
               files.videoService.diInjectServiceSolved,
@@ -501,15 +501,15 @@ export class CodelabConfigService {
           }]
         },
         {
-          name: 'Component Tree',
+          name: '组件集合',
           selectedExerciseIndex: 0,
           exercises: [
             {
-              name: 'Intro',
+              name: '概述',
               description: `
-          <h1>Let's create a Video component!</h1>
-          <p>Create a separate component with the video information.</p>
-          <p>Add description, amount of views and likes. </p>
+          <h1>创建一个Video组件!</h1>
+          <p>用Video的对象创建一个独立的组件.</p>
+          <p>为组件添加描述description, 浏览量Views和点赞量likes. </p>
               
             <div class = "inBrowser">
               <div class="smaller">   
@@ -552,8 +552,8 @@ export class CodelabConfigService {
              tests: []
              }, */{
 
-              name: 'Create VideoComponent',
-              description: `Create a video component.`,
+              name: '创建Video组件',
+              description: `创建一个 video component.`,
               solutions: [
                 files.videoHtml.videoComponentCreateSolved,
                 files.videoComponent.videoComponentCreateSolved,
@@ -575,8 +575,8 @@ export class CodelabConfigService {
               tests: []
             },
             {
-              name: 'Use VideoComponent',
-              description: `Use the VideoComponent in the app.`,
+              name: '使用Video组件',
+              description: `在程序中使用Video组件.`,
               solutions: [
                 files.appModule.videoComponentUseSolved,
                 files.appHtml.videoComponentUseSolved,
@@ -598,15 +598,15 @@ export class CodelabConfigService {
               tests: []
             }]
         }, {
-          name: 'Custom events',
+          name: '自定义事件',
           selectedExerciseIndex: 0,
           exercises: [
             {
-              name: 'Intro',
+              name: '概述',
               description: `
-          <h1>Let's use custom events!</h1>
-          <p>Add a ThumbsComponent which will emit an 'onThumbs' event.  </p>
-          <p>In the video component listen to the event and change the amount of likes accordingly.</p>
+          <h1>使用自定义事件!</h1>
+          <p>添加一个可以触发'onThumbs'事件的ThumbsComponent组件 </p>
+          <p>video组件将监听ThumbsComponent组件的onThumbs事件来改变点赞量.</p>
               
             <div class = "inBrowser">
               <div class="smaller">   
@@ -627,8 +627,8 @@ export class CodelabConfigService {
               messageNext: `I'm a ready, let's start!`
             },
             {
-              name: 'Create ThumbsComponent',
-              description: `Create ThumbsComponent.`,
+              name: '创建ThumbsComponent组件',
+              description: `创建一个小组件ThumbsComponent.`,
               solutions: [
                 files.thumbsHtml.thumbsComponentCreateSolved,
                 files.thumbsComponent.thumbsComponentCreateSolved,
@@ -653,8 +653,8 @@ export class CodelabConfigService {
               tests: []
             },
             {
-              name: 'Use ThumbsComponent',
-              description: `Use the 'ThumbsComponent' in the app.`,
+              name: '使用ThumbsComponent组件',
+              description: `在程序中使用'ThumbsComponent'组件`,
               solutions: [
                 files.appModule.thumbsComponentUseSolved,
                 files.videoHtml.thumbsComponentUseSolved,
@@ -679,16 +679,16 @@ export class CodelabConfigService {
               tests: []
             }]
         }, {
-          name: 'Content projection',
+          name: '突出展示',
           selectedExerciseIndex: 0,
           exercises: [
 
             {
-              name: 'Intro',
+              name: '概述',
               description: `
-          <h1>Let's project some content!</h1>
-          <p>In this milestone we'll create a component called 'TogglePanel'</p>
-          <p>It will actually take 2 divs, but only display one at a time. </p>
+          <h1>突出展示内容!</h1>
+          <p>在本节我们创建一个命名为'TogglePanel'的组件</p>
+          <p>这个组件实际上有2个div，但是我们每次始终只显示一个div. </p>
               
             <div class = "inBrowser">
               <div class="smaller">   
@@ -702,7 +702,7 @@ export class CodelabConfigService {
               </div>
             </div>               
               
-            <p>So when you click the 'Show meta button', description is gone, likes and views are displayed instead.</p>
+            <p>当我们点击'Show meta'按钮，描述div被隐藏，点赞和浏览div显示.</p>
               
             <div class = "inBrowser">
               <div class="smaller">   
@@ -722,8 +722,8 @@ export class CodelabConfigService {
               messageNext: `I'm a ready, let's start!`
             },
             {
-              name: 'Add TogglePanelComponent',
-              description: `Let's create a component which will use content projection to toggle between description and meta information. `,
+              name: '添加可折叠面板组件TogglePanelComponent',
+              description: `使用内容突出展示创建一个可以在描述div和点赞/浏览div之间切换的组件. `,
               solutions: [
                 files.togglePanelHtml.togglePanelComponentCreateSolved,
                 files.togglePanelComponent.togglePanelComponentCreateSolved,
@@ -747,8 +747,8 @@ export class CodelabConfigService {
               tests: []
             },
             {
-              name: 'Use TogglePanelComponent',
-              description: `Now let's use the component.`,
+              name: '使用折叠面板组件TogglePanelComponent',
+              description: `现在我们开始使用该组件.`,
               solutions: [
                 files.appModule.togglePanelComponentUseSolved,
                 files.videoHtml.togglePanelComponentUseSolved
@@ -775,15 +775,15 @@ export class CodelabConfigService {
             }]
         },
         {
-          name: 'Parent-container',
+          name: '父类容器',
           selectedExerciseIndex: 0,
           exercises: [{
-            name: 'Intro',
+            name: '概述',
             description: `
-          <h1>Let's inject parent component!</h1>
-          <p>In this milestone we'll create create a ContextAdComponent. </p>
-          <p>This component will not use inputs. Instead it will require parent (Video) component and directly look at it's properties. </p>
-          <p>It will display different text depending of if there's a word 'music' in the description. </p>
+          <h1>现在注入父类组件!</h1>
+          <p>在这节我们将创建一个上下文的广告组件ContextAdComponent. </p>
+          <p>这个组件直接用VideoComponent组件做为父类组件代替input属性. </p>
+          <p>假如描述description中包括music串的话，它会显示不同的内容. </p>
               
             <div class = "inBrowser">
               <div class="smaller">   
@@ -806,7 +806,7 @@ export class CodelabConfigService {
               </div>
             </div>          
                  
-             <p>Note, we are actually calling it ContextComponent, because when it was called ContextAdComponent, adblock blocked it, and I spent 2 hours debugging. </p>
+             <p>注意： 我们实际是调用的ContextComponent组件，因为adblock会阻止对ContextAdComponent的调用，kirill化2个小时调试. </p>
               
                    
         `,
@@ -815,10 +815,10 @@ export class CodelabConfigService {
             messageNext: `I'm a ready, let's start!`
           },
             {
-              name: 'Inject parent component',
-              description: `<p>Create a Context(Ad)Component</p>
-            <p>which will inject it's parent component, see what thedescription, and display the value accordingly.</p>
-            <p>Note: We had to get rid of the 'Ad' part of the component, because AdBlock blocked the template.</p>`,
+              name: '注入父类组件',
+              description: `<p>创建一个Context(Ad)Component组件</p>
+            <p>它将注入父类组件，这样就能立刻看到描述和显示相应值</p>
+            <p>注意: 我们需要忽略组件的Ad部分，否则google的广告插件AdBlock会阻止页面`,
               solutions: [
                 files.contextComponent.contextComponentUseSolved
               ],
@@ -853,11 +853,11 @@ export class CodelabConfigService {
         },
 
         {
-          name: 'Pipes',
+          name: '管道',
           selectedExerciseIndex: 0,
           exercises: [{
-            name: 'Create a pipe',
-            description: 'Create a fuzzy pipe, which takes a date in YYYY-MM-DD format, and returns how many days ago this was.',
+            name: '创建管道',
+            description: '创建一个通过格式化(YYYY-MM-DD)的日期返回几天前的fuzzy管道.',
             solutions: [
               files.fuzzyPipe.fuzzyPipeCreateSolved,
             ],
@@ -867,8 +867,8 @@ export class CodelabConfigService {
             ],
             tests: []
           }, {
-            name: 'Use the pipe',
-            description: 'Now include the app in the module and use in the app.',
+            name: '使用管道',
+            description: '在程序中使用管道，需要将管道包括在module中.',
             solutions: [
               files.appModule.fuzzyPipeUseSolved,
               files.videoHtml.fuzzyPipeUseSolved,
@@ -934,13 +934,13 @@ export class CodelabConfigService {
          }]
          },*/
         {
-          name: 'Survey',
+          name: '问卷调查',
           selectedExerciseIndex: 0,
           exercises: [{
-            name: 'All done!',
+            name: '结束!',
             description: `
-        Please fill out <a href = "https://docs.google.com/forms/d/1lGPvmCftArLXVuJkO6L7sXZiqIDj-DtiPM0MQJXLJTA/edit">The survey</a>
-        (which is different from the feedback form)
+        请帮助填写问卷(请到墙外) <a href = "https://docs.google.com/forms/d/1lGPvmCftArLXVuJkO6L7sXZiqIDj-DtiPM0MQJXLJTA/edit">在线调查</a>
+        (注意：这不同于反馈！)
 `,
             fileTemplates: [],
             tests: []
