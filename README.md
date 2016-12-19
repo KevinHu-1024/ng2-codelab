@@ -1,5 +1,5 @@
 # Codelab中文版说明
-这是Kirill的Angular2教学项目的中文版本，英文原版的链接在这里`https://github.com/kirjs/ng2-codelab`，我会实时同步Kirill的commit。
+这是Kirill的Angular2教学项目的中文版本，英文原版的链接在这里 https://github.com/kirjs/ng2-codelab ，我会实时同步Kirill的commit。
 
 # Codelab
 这是一个codelab(编码实验室)平台，设计它目的是简化创建互动式习题的过程。
