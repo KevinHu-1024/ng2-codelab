@@ -857,7 +857,7 @@ export class CodelabConfigService {
           selectedExerciseIndex: 0,
           exercises: [{
             name: '创建管道',
-            description: '创建一个通过格式化(YYYY-MM-DD)的日期返回几天前的fuzzy管道.',
+            description: '创建一个名为 fuzzy 的管道, 通过接收 YYYY-MM-DD 格式的日期参数, 返回这是几天前。',
             solutions: [
               files.fuzzyPipe.fuzzyPipeCreateSolved,
             ],
