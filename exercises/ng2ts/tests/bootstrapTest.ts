@@ -1,6 +1,6 @@
 describe('Component', () => {
-  xit(`There is actually no simple way to test it, just make sure it looks nice :)`, () => {
-
+  xit(`实际上没有简单的方法进行测试，只是为了看起来Nice而已 :)`, () => {
+      
   });
 });
 

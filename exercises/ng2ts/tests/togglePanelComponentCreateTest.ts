@@ -20,11 +20,11 @@ beforeEach(() => {
   TestBed.compileComponents();
 });
 
-describe('Content projection', () => {
-  it(`TogglePanelComponent.ts: We added the template and the selector for you, enjoy!`, () => {
+describe('内容突出', () => {
+  it(`TogglePanelComponent.ts: 我们已经为您添加好模板和选择器!`, () => {
   });
 
-  it(`TogglePanelComponent.ts: Add a boolean property to the component. The property can have any name, and must have a default value.`, () => {
+  it(`TogglePanelComponent.ts: 在组件添加一个有默认值的布尔型的属性，名字随意（例如showDescription）.`, () => {
     let fixture = TestBed.createComponent(TogglePanelComponent);
     // the intent is to let them come up with the property name, so we assume there will be one.
     const props = Object.keys(fixture.componentInstance);
@@ -36,21 +36,21 @@ describe('Content projection', () => {
     chai.expect(fixture.componentInstance[prop], `Property '${prop}' must have a default value`).is.not.undefined;
   });
 
-  it(`togglePanel.html: Use content projection to only display the content with the selector .description by default.`, () => {
+  it(`togglePanel.html: 当showDescription为真时.description就突出显示.`, () => {
     let fixture = TestBed.createComponent(WrapperComponent);
     fixture.detectChanges();
     chai.expect(fixture.debugElement.query(By.css('.description')), `Description should be displayed`).not.null;
     chai.expect(fixture.debugElement.query(By.css('.extra')), `Extra information should be hidden`).is.null;
   });
 
-  it(`togglePanel.html: Add a button to show extra information`, () => {
+  it(`togglePanel.html: 添加一个按钮来显示额外的信息`, () => {
     let fixture = TestBed.createComponent(WrapperComponent);
     fixture.detectChanges();
     let buttons = fixture.nativeElement.querySelectorAll('button');
     chai.expect(buttons.length, `Should show exactly one button`).to.equals(1);
   });
 
-  it(`togglePanel.html: When the button is pressed, switch the flag and only display the content with the '.extra' selector.`, () => {
+  it(`togglePanel.html:点击额外信息按钮时, 只显示类为 '.extra'的选择器，同时变更showDescription值.`, () => {
     let fixture = TestBed.createComponent(WrapperComponent);
     fixture.detectChanges();
     let button = fixture.nativeElement.querySelector('button');
@@ -60,7 +60,7 @@ describe('Content projection', () => {
     chai.expect(fixture.debugElement.query(By.css('.extra')), `Extra information should be displayed`).not.null;
   });
 
-  it(`togglePanel.html: Add a button to come back to the description`, () => {
+  it(`togglePanel.html: 添加一个返回到描述description的按钮`, () => {
     let fixture = TestBed.createComponent(WrapperComponent);
     fixture.detectChanges();
     fixture.nativeElement.querySelector('button').click();

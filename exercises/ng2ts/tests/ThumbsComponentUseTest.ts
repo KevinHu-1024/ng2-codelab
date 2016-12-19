@@ -26,8 +26,8 @@ beforeEach(() => {
   TestBed.compileComponents();
 });
 
-describe('Component tree', () => {
-  it(`AppModule: Add the ThumbsComponent to the AppModule 'declarations' property`, () => {
+describe('组件集合', () => {
+  it(`AppModule: 添加ThumbsComponent组件到AppModule的属性'declarations'中`, () => {
     let metadata;
     try {
       metadata = Reflect.getMetadata('annotations', AppModule);
@@ -38,7 +38,7 @@ describe('Component tree', () => {
     chai.expect(metadata[0].declarations, `Keep the app component`).contains(VideoComponent);
   });
 
-  it(`video.html: Use the thumbs component in the template`, () => {
+  it(`video.html: 在模板中使用thumbs component组件`, () => {
     let fixture = TestBed.createComponent(VideoComponent);
     fixture.componentInstance.video = Api.fetch('')[0];
     fixture.detectChanges();
@@ -46,7 +46,7 @@ describe('Component tree', () => {
     chai.expect(fixture.nativeElement.querySelector('.thumbs-down')).is.ok;
   });
 
-  it(`VideoComponent: Listen to the thumbs component onThumbs event, and update the amount of likes accordingly`, () => {
+  it(`VideoComponent: 监听thumbs component的onThumbs事件,更新点赞量`, () => {
     let fixture = TestBed.createComponent(VideoComponent);
     fixture.componentInstance.video = Api.fetch('')[0];
     fixture.detectChanges();

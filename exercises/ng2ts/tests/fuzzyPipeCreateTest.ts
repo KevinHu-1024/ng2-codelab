@@ -16,23 +16,23 @@ const formattedDate = d.toISOString().slice(0, 10);
 
 
 describe('Pipe', () => {
-  it('Create a class called FuzzyPipe', () => {
+  it('创建名称为 FuzzyPipe 的类', () => {
     chai.expect(typeof evalJs('FuzzyPipe')).equals('function');
   });
 
-  it('Export it', () => {
+  it('导出Export该类', () => {
     chai.expect(typeof FuzzyPipe).equals('function');
   });
 
-  it('Add a @Pipe() decorator', () => {
+  it('为类添加管道 @Pipe()修饰符', () => {
     chai.expect(metadata).is.an('array')
   });
 
-  it('Set the name to fuzzy', () => {
+  it('设置管道的名称为fuzzy', () => {
     chai.expect(metadata[0].name).equals('fuzzy');
   });
 
-  it(`Make it return '2 days ago for '${formattedDate}'`, () => {
+  it(`确保它返回 '2天前的日期 '${formattedDate}'`, () => {
     let fuzzyTime = new FuzzyPipe();
     chai.expect(fuzzyTime.transform(d.toISOString().slice(0, 10)).toLowerCase()).equals('2 days');
   });

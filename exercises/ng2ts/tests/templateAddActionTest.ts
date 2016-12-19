@@ -16,22 +16,22 @@ beforeEach(() => {
 });
 
 describe('Blabla', () => {
-  it(`AppComponent.ts: Add a 'videos' property, set the value as empty array.`, () => {
+  it(`AppComponent.ts: 添加'videos'属性，赋值为空的数组.`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    chai.expect(fixture.componentInstance.videos, `No videos property on the component`).is.not.undefined;
-    chai.expect(fixture.componentInstance.videos, `Videos property on the component is not an array.`).is.an('array');
+    chai.expect(fixture.componentInstance.videos, `组件没有申明videos属性`).is.not.undefined;
+    chai.expect(fixture.componentInstance.videos, `组件声明的Videos属性不是数组.`).is.an('array');
   });
 
-  it(`AppComponent.ts: Add a 'search' method on the component, that takes a 'searchString' parameter.`, () => {
+  it(`AppComponent.ts: 为组件添加带字符串参数searchString的查找'search'方法`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    chai.expect(fixture.componentInstance.search, `Search should be a function`).is.a('function');
-    chai.expect(fixture.componentInstance.search.length, `Search should take one parameter`).equals(1);
+    chai.expect(fixture.componentInstance.search, `查找Search方法必须是个函数`).is.a('function');
+    chai.expect(fixture.componentInstance.search.length, `查找Search方法必须有一个参数`).equals(1);
   });
 
-  it(`app.html: Add a click handler to the button, call 'search' method and pass the input value 
-      (Actual search functionality will be implemented in the next exercise)`, () => {
+  it(`app.html: 为button按钮添加单击click事件, 调用'search'方法，把input中的值作为参数 
+      (在下节练习中将改进这个查找函数)`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const input = fixture.nativeElement.querySelector('input');
@@ -48,15 +48,15 @@ describe('Blabla', () => {
 
       input.value = searchString;
       button.click();
-      chai.expect(called, `Search function should be called when the search button is pressed`).equals(true);
-      chai.expect(passedValue, `Input value is not passed to the search function`).equals(input.value)
+      chai.expect(called, `单点击查找search button按钮时调用Search函数`).equals(true);
+      chai.expect(passedValue, `Input输入的值有错误，search函数无法调用`).equals(input.value)
     }
 
     testSearch('Awesome kittens');
     testSearch('Other value');
   });
 
-  it(`app.html: Add a message saying 'No videos' which is displayed only when the videos array is empty`, () => {
+  it(`app.html: 添加一个只有在 videos数组为空时显示的信息'No videos'，`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     fixture.componentInstance.videos = [];

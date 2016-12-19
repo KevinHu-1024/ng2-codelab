@@ -24,21 +24,21 @@ beforeEach(() => {
   }
 });
 
-describe('Component tree', () => {
-  describe('Make sure metadata is in place', () => {
-    it(`VideoComponent.ts: Set the selector property to 'my-video'.`, () => {
+describe('组件集合', () => {
+  describe('确保一些元素在相应位置', () => {
+    it(`VideoComponent.ts: 添加组件@Component修饰符并设置selector属性为'my-video'`, () => {
       const metadata = Reflect.getMetadata('annotations', VideoComponent);
       chai.expect(metadata, `VideoComponent doesn't have a @Component() annotation`).is.not.undefined;
       chai.expect(metadata[0].selector, `VideoComponent's selector has to be 'my-video'.`).equals('my-video')
     });
 
-    it(`VideoComponent.ts: Set the templateUrl to load the appropriate html file`, () => {
+    it(`VideoComponent.ts: 在组件@Component修饰符中设置templateUrl属性为存在的html页面`, () => {
       const metadata = Reflect.getMetadata('annotations', VideoComponent);
       chai.expect(metadata, `VideoComponent doesn't have a @Component() annotation`).is.not.undefined;
-      chai.expect(metadata[0].templateUrl, `VideoComponent's templateUrl should be set to './video.html'`).matches(/\.\/video\.html/)
+      chai.expect(metadata[0].templateUrl, `VideoComponent's的 templateUrl应该设置为 './video.html'`).matches(/\.\/video\.html/)
     });
 
-    it(`VideoComponent.ts: Add a video property and decorate it with @Input()`, () => {
+    it(`VideoComponent.ts: 新增一个 video 属性 并用 @Input() 符号修饰`, () => {
       const metadata = Reflect.getMetadata('propMetadata', VideoComponent);
       chai.expect(metadata, `VideoComponent doesn't have any @Input()'s`).is.not.undefined;
       chai.expect(Object.keys(metadata).length, `VideoComponent doesn't have any @Input()'s`).equals(1);
@@ -47,7 +47,7 @@ describe('Component tree', () => {
   });
 
 
-  describe('Make sure things are displayed properly', () => {
+  describe('确保所有都显示正确', () => {
     let fixture;
     beforeEach(() => {
       fixture = TestBed.createComponent(VideoComponent);
@@ -55,31 +55,31 @@ describe('Component tree', () => {
       fixture.detectChanges();
     });
 
-    it(`Video.html: Display the video title`, () => {
+    it(`Video.html: 显示 video 对象的 title 属性`, () => {
       chai.expect(fixture.nativeElement.innerHTML, `can't find the video title`).contains(video.title);
     });
 
-    it(`Video.html: Display the video thumbnail`, () => {
+    it(`Video.html: 显示 video 对象的 img 属性`, () => {
       const image = fixture.nativeElement.querySelector('img');
-      chai.expect(image, `Can't find the thumbnal`).is.not.null;
+      chai.expect(image, `没有找到缩略图 `).is.not.null;
       chai.expect(image.getAttribute('ng-reflect-src')).equals(video.src);
     });
 
-    it(`Video.html: Display the video description`, () => {
+    it(`Video.html: 显示 video 对象的 description 属性`, () => {
       chai.expect(fixture.nativeElement.innerHTML, `can't find the video description`).contains(video.description);
     });
 
 
 
-    it(`Video.html: Display the video date`, () => {
+    it(`Video.html:显示 video 对象的 date 属性`, () => {
       chai.expect(fixture.nativeElement.innerHTML, `can't find the video date`).contains(video.date);
     });
 
-    it(`Video.html: Display the number video likes`, () => {
+    it(`Video.html:显示 video 对象的点赞量 likes`, () => {
       chai.expect(fixture.nativeElement.innerHTML, `can't find the video like`).contains(video.likes);
     });
 
-    it(`Video.html: Display the number of video views`, () => {
+    it(`Video.html: 显示 video 对象的浏览量 views`, () => {
       chai.expect(fixture.nativeElement.innerHTML, `can't find the video description`).contains(video.views);
     });
   });

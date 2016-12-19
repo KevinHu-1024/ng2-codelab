@@ -28,7 +28,7 @@ beforeEach(() => {
 });
 
 describe('Component tree', () => {
-  it(`AppModule: Add the VideoComponent to the AppModule 'declarations'.`, () => {
+  it(`AppModule: 添加VideoComponent到AppModule的'declarations'属性`, () => {
     let metadata;
     try {
       metadata = Reflect.getMetadata('annotations', AppModule);
@@ -39,7 +39,7 @@ describe('Component tree', () => {
     chai.expect(metadata[0].declarations, `Keep the app component`).contains(AppComponent);
   });
 
-  it(`app.html: Use video component (get rid of the old title/thumbnail)`, () => {
+  it(`app.html: 抛弃老的代码，使用新的video组件<my-video></my-video>`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.componentInstance.videos = Api.fetch('');
     // TODO: if the element is added, but the video prop is not present, this test will fail with
@@ -52,7 +52,7 @@ describe('Component tree', () => {
     chai.expect(myVideos.length, `There should be one my-video element for each element`).equals(fixture.componentInstance.videos.length);
   });
 
-  it(`app.html: Use the data binding to pass the video object to the component (don't forget the square brackets)`, () => {
+  it(`app.html: 将 video 对象数据绑定到 VideoComponent (记住要使用方括号)`, () => {
     let fixture = TestBed.createComponent(AppComponent);
 
     fixture.componentInstance.videos = Api.fetch('');

@@ -47,22 +47,22 @@ beforeEach(() => {
 });
 
 describe('Children', () => {
-  it(`ContextComponent: Inject the ContextService into the constructor and store it as a property.`, () => {
+  it(`ContextComponent: 注入ContextService服务到构造方法 constructor 中，并将它作为属性保存.`, () => {
     const fixture = TestBed.createComponent(ContextComponent);
     chai.expect(objectHasAn(fixture.componentInstance, ContextService)).to.be.true;
   });
 
-  it(`ContextComponent: Inject the parent component (VideoComponent) into the constructor and store it as a property.`, () => {
+  it(`ContextComponent: 注入父类组件 (VideoComponent)到构造方法constructor中，并将它作为属性保存.`, () => {
     const fixture = TestBed.createComponent(ContextComponent);
     chai.expect(objectHasAn(fixture.componentInstance, VideoComponent)).to.be.true;
   });
 
-  it(`ContextComponent: Add an ngOnInit method to the component. (It's a special method angular will call when the component is created).`, () => {
+  it(`ContextComponent: 为组件添加一个 ngOnInit 方法. (当组件创建的时候激活ngOnInit方法).`, () => {
     const fixture = TestBed.createComponent(ContextComponent);
     chai.expect(fixture.componentInstance.ngOnInit).is.a('function');
   });
 
-  it(`ContextComponent: In the onOnInit method Call 'getAdText' on the service, and pass it the video 'description' provided by the injected video component. Assign the result to the declared text property.`, () => {
+  it(`ContextComponent: 在onOnInit方法中调用服务的 'getAdText' 方法, 并且通过注入的 videocomponent 组件的到 video的 'description'，将结果声明为文本属性.`, () => {
     const fixture = TestBed.createComponent(ContextComponent);
     let componentInstance = fixture.componentInstance;
 
@@ -83,7 +83,7 @@ describe('Children', () => {
     chai.expect(fixture.nativeElement.innerHTML).to.contain('Check out our web site');
   });
 
-  it(`AppModule: Add the ContextComponent to the AppModule declarations (We did this for you).`, () => {
+  it(`AppModule: 添加ContextComponent到AppModule的declarations属性中 (此步略过).`, () => {
     let metadata;
     try {
       metadata = Reflect.getMetadata('annotations', AppModule);
@@ -93,7 +93,7 @@ describe('Children', () => {
     chai.expect(metadata[0].declarations, `Video component not found`).contains(ContextComponent);
   });
 
-  it(`video.html: Actually display the ad (We actually also did it for you).`, () => {
+  it(`video.html: 显示真实的广告 (此步略过).`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     // TODO: Actually write a test

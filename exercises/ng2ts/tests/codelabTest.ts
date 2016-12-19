@@ -27,7 +27,7 @@ const guests = [
 ];
 
 describe('Component', () => {
-  it(`Create a class called 'Codelab'`, () => {
+  it(`创建'Codelab'类`, () => {
     /**
      * We can use evalJs to get into the scope of the user's file.
      * Currently evalJs has to be manually added to the `before`
@@ -42,36 +42,36 @@ describe('Component', () => {
     chai.expect(typeof evalJs('Codelab')).equals('function');
   });
 
-  it(`Export the class`, () => {
+  it(`为类增加导出头Export`, () => {
     /**
      * Require the class, assert it's a function (compile target is es5).
      */
     chai.expect(typeof Codelab).equals('function');
   });
 
-  it('Add a constructor', () => {
+  it('为类添加构造方法constructor', () => {
     /**
      * Fancy: Require the actual source code, and search in it.
      */
-    chai.expect(code.typescript_intro_Codelab_ts.indexOf('constructor') > -1, `The codelab class doesn't have constuctor`).is.true;
+    chai.expect(code.typescript_intro_Codelab_ts.indexOf('constructor') > -1, `类codelab没有构造方法constuctor`).is.true;
   });
 
-  it(`Make constructor take a parameter 'guests'`, () => {
-    chai.expect(Codelab.length, `Codelab constructor should take one parameter called 'guests'`).equals(1);
+  it(`确保构造方法constructor中带'guests'参数，该参数是Guest数组`, () => {
+    chai.expect(Codelab.length, `Codelab类的构造方法constructor必须有一个'guests'参数！`).equals(1);
   });
 
-  it('This parameter should be public', () => {
+  it('guests参数应该是public范围', () => {
     const codelab = new Codelab(guests);
     chai.expect(codelab.guests).equals(guests);
   });
 
-  it(`Create new method 'getGuestsComing'`, () => {
+  it(`创建一个新的'getGuestsComing'方法`, () => {
     chai.expect(typeof (new Codelab(guests).getGuestsComing)).equals('function');
   });
 
-  it(`Modify getGuestsComing to filter the guests array and only return guests with the 'coming' property set to true. 
-  (hint: please use Array.filter method, and NOT a for loop. Ask us for help if you don't know how to
-   (There's potential of getting into an infinite loop otherwise)`, () => {
+  it(`在getGuestsComing 方法中实现只返回coming属性为true的Guest对象. 
+  (提示: 请使用Array.filter方法,不要用循环.假如您不知道如何做就请求我们帮助
+   (否则有可能形成死循环)`, () => {
     chai.expect(new Codelab(guests).getGuestsComing().length).equals(1);
   });
 

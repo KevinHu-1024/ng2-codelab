@@ -16,11 +16,11 @@ beforeEach(() => {
 });
 
 describe('Blabla', () => {
-  it(`app.html: Add a <h1> header, display the 'title' property of the AppComponent inside`, () => {
+  it(`app.html: 在<div>内部添加<h1>标签显示AppComponent组件的title属性`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const header = fixture.nativeElement.querySelector('h1');
-    chai.expect(header, `Can't find any h1 headers`).is.not.null;
+    chai.expect(header, `没有发现h1标签`).is.not.null;
     chai.expect(header.innerHTML).contains('CatTube');
     fixture.componentInstance.title = 'SomethingElse';
     fixture.detectChanges();
@@ -29,19 +29,19 @@ describe('Blabla', () => {
     chai.expect(header2.innerHTML, `Use the curly braces to put component title property in the header`).contains('SomethingElse');
   });
 
-  it(`app.html: Add an <input> with a 'placeholder' set to 'video' (hint: 'placeholder' is just an attribute of an input tag) `, () => {
+  it(`app.html: 添加<input>标签，设置'placeholder'属性为'video' (提示: 'placeholder' 只是input的属性标识) `, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const input = fixture.nativeElement.querySelector('input');
-    chai.expect(input, `Can't find any inputs`).is.not.null;
-    chai.expect(input.placeholder, `Input placeholder should contain word 'video'`).contains('video');
+    chai.expect(input, `没有发现inputs标签`).is.not.null;
+    chai.expect(input.placeholder, `Input标签的placeholder属性应该包含'video'`).contains('video');
   });
 
-  it(`app.html: Add a <button> labeled 'search'`, () => {
+  it(`app.html: 添加标签为'search'的按钮<button>`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const button = fixture.nativeElement.querySelector('button');
-    chai.expect(button, `Can't find any buttons`).is.not.null;
+    chai.expect(button, `没有发现按钮`).is.not.null;
     chai.expect(button.innerHTML.toLowerCase()).contains('search')
   });
 

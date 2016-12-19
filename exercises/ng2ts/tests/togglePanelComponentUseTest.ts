@@ -24,7 +24,7 @@ beforeEach(() => {
 });
 
 describe('Component tree', () => {
-  it(`AppModule: Add the TogglePanelComponent to the AppModule declarations.`, () => {
+  it(`AppModule: 添加TogglePanelComponent组件到AppModule的declarations属性中.`, () => {
     let metadata;
     try {
       metadata = Reflect.getMetadata('annotations', AppModule);
@@ -36,7 +36,7 @@ describe('Component tree', () => {
     chai.expect(metadata[0].declarations, `Add TogglePanelComponent`).contains(TogglePanelComponent);
   });
 
-  it(`video.html: Use the TogglePanel component in the template`, () => {
+  it(`video.html: 在模板中使用TogglePanel component组件`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     let panel = fixture.nativeElement.querySelector('my-toggle-panel');
@@ -44,7 +44,7 @@ describe('Component tree', () => {
   });
 
 
-  it(`video.html: Add .description as TogglePanel's content`, () => {
+  it(`video.html: 向TogglePanel组件中添加 .description 样式`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     let panel = fixture.nativeElement.querySelector('my-toggle-panel');
@@ -56,7 +56,7 @@ describe('Component tree', () => {
     chai.expect(fixture.nativeElement.querySelector('my-video').innerHTML, `Should not display likes `).not.contains(video.likes);
   });
 
-  it(`video.html: Add .extra as TogglePanel's content`, () => {
+  it(`video.html: 向TogglePanel中添加.extra 样式`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     let panel = fixture.nativeElement.querySelector('my-toggle-panel');

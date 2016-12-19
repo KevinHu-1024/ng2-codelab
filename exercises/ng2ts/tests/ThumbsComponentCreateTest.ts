@@ -21,38 +21,38 @@ beforeEach(() => {
   TestBed.compileComponents();
 });
 
-describe('Component tree', () => {
-  describe('Make sure things are displayed properly', () => {
+describe('组件集合', () => {
+  describe('保证前面的显示正常', () => {
     let fixture;
     beforeEach(() => {
       fixture = TestBed.createComponent(ThumbsComponent);
       fixture.detectChanges();
     });
 
-    it(`thumbs.html: Add a button with a 'thumbs-up' CSS class.`, () => {
-      chai.expect(fixture.nativeElement.querySelector('.thumbs-up'), `can't find thumbs up button`).to.be.ok;
+    it(`thumbs.html: 添加一个包含'thumbs-up' CSS 样式的按钮.`, () => {
+      chai.expect(fixture.nativeElement.querySelector('.thumbs-up'), `没有找到带 thumbs up类的按钮`).to.be.ok;
     });
 
-    it(`thumbs.html: Add a button with a 'thumbs-down' CSS class.`, () => {
-      chai.expect(fixture.nativeElement.querySelector('.thumbs-down'), `can't find thumbs down button`).to.be.ok;
+    it(`thumbs.html: 添加一个包含'thumbs-down' CSS样式的按钮.`, () => {
+      chai.expect(fixture.nativeElement.querySelector('.thumbs-down'), `没有找到带 thumbs down 类的按钮`).to.be.ok;
     });
   });
 
-  describe('Make sure things work', () => {
-    it(`ThumbsComponent.ts: Set the selector to be 'my-thumbs'.`, () => {
+  describe('确保所有正常', () => {
+    it(`ThumbsComponent.ts: 设置@Component修饰符的selector属性为'my-thumbs'.`, () => {
       const metadata = Reflect.getMetadata('annotations', ThumbsComponent);
       chai.expect(metadata, `ThumbsComponent doesn't have a @Component() annotation`).is.not.undefined;
       chai.expect(metadata[0].selector, `ThumbsComponent's selector has to be 'my-thumbs'.`).equals('my-thumbs')
     });
 
-    it(`ThumbsComponent.ts: Set the templateUrl to load appropriate html file.`, () => {
+    it(`ThumbsComponent.ts: 设置@Component修饰符的templateUrl属性为html页面.`, () => {
       const metadata = Reflect.getMetadata('annotations', ThumbsComponent);
       chai.expect(metadata, `ThumbsComponent doesn't have a @Component() annotation`).is.not.undefined;
-      chai.expect(metadata[0].templateUrl, `ThumbsComponent's templateUrl should be set to './thumbs.html'`).equals('./thumbs.html')
+      chai.expect(metadata[0].templateUrl, `ThumbsComponent's的 templateUrl 应设置为 './thumbs.html'`).equals('./thumbs.html')
     });
 
     // TODO: split
-    it(`ThumbsComponent.ts: Add an 'onThumbs' property and set the value to a new EventEmitter. Decorate with @Output()`, () => {
+    it(`ThumbsComponent.ts: 添加带@Output()修饰符的'onThumbs'属性，设置值为EventEmitter `, () => {
       const metadata = Reflect.getMetadata('propMetadata', ThumbsComponent);
       chai.expect(metadata, `ThumbsComponent doesn't have any @Outputs()'s`).is.not.undefined;
       chai.expect(Object.keys(metadata).length, `ThumbsComponent doesn't have any @Outputs()'s`).equals(1);
@@ -60,14 +60,14 @@ describe('Component tree', () => {
     });
   });
 
-  describe('Make sure things are displayed properly', () => {
+  describe('确保所有的显示都正确', () => {
     let fixture;
     beforeEach(() => {
       fixture = TestBed.createComponent(ThumbsComponent);
       fixture.detectChanges();
     });
 
-    it(`thumbs.html: Make the 'thumbs-up' button emit the onThumbs event with the correct thumbs ENUM value.`, () => {
+    it(`thumbs.html: 'thumbs-up'按钮执行onThumbs事件.`, () => {
       let thumbs = null;
       fixture.componentInstance.onThumbs.subscribe((event) => {
         thumbs = event;
