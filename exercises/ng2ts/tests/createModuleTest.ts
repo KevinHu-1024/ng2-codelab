@@ -28,7 +28,7 @@ describe('Component', () => {
     chai.expect(metadata).is.not.undefined
   });
 
-  it(`在@NgModule修饰符内部导入'BrowseModule' 模块`, () => {
+  it(`在@NgModule修饰符内部导入'BrowserModule' 模块`, () => {
     // TODO: Figure out if this is actually needed
     chai.expect(metadata[0].imports[0]).equals(BrowserModule);
   });
