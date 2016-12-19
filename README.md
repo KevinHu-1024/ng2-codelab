@@ -1,25 +1,28 @@
-# Codelab
-This is an codelab platform designed to simplify creating interactive exercises.
+# Codelab中文版说明
+这是Kirill的Angular2教学项目的中文版本，英文原版的链接在这里`https://github.com/kirjs/ng2-codelab`，我会实时同步Kirill的commit。
 
-This app is intended with Angular v2 and is intended to teach angular v2.
+# Codelab
+这是一个codelab(编码实验室)平台，设计它目的是简化创建互动式习题的过程。
+
+本应用基于Angular v2，目的是用于Angular v2的教学。
 
 Demo:
 https://ng2ts-c64e3.firebaseapp.com/
 
-## Longer term plans.
-* Adding more content
-* Adding features
-* Generalizing the app
+## 长期规划
+* 增加更多内容
+* 增加更多特性
+* 成为一个通用app
 
+## 启动server
+这是一个临时的hack方法，用来同步加载习题。
 
-## Starting the server
-This is a temporary hack to allow synchronous loading of the exercises.
+在开发用的server上运行`npm start`。然后导航到`http://localhost:4200/`。这样一来，只要你对源代码做了任何修改，app就会自动刷新。
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Running unit tests
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 运行单元测试
+运行`ng test`命令可以启动[Karma](https://karma-runner.github.io) 来执行单元测试用例。
 
 ## Angular-cli
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+此工程是通过[angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1 生成的。
+
+关于`angular-cli`，如果你需要更多帮助，请运行`ng --help`命令，或者检出[Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md)。
