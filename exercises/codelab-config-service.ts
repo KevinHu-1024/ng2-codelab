@@ -939,7 +939,7 @@ export class CodelabConfigService {
           exercises: [{
             name: '结束!',
             description: `
-        请帮助填写问卷(请到墙外) <a href = "https://docs.google.com/forms/d/1lGPvmCftArLXVuJkO6L7sXZiqIDj-DtiPM0MQJXLJTA/edit">在线调查</a>
+        请帮助填写问卷 <a href = "https://www.gdgdocs.org/forms/d/e/1FAIpQLSc-IRsHnwTfYSglk57lQ28iCSrMJ-8X2icxqMGPcXJLbBeYCg/viewform">在线调查</a>
         (注意：这不同于反馈！)
 `,
             fileTemplates: [],
