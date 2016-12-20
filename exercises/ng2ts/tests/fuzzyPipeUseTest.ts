@@ -44,17 +44,17 @@ function sampleFuzzy(value) {
 describe('Pipes', () => {
 
 
-  it(`AppModule: 添加管道FuzzyPipe到AppModule的declarations中`, () => {
+  it(`app.module.ts: 添加 FuzzyPipe 管道到 AppModule 的 @NgModule 装饰器属性 declarations 中`, () => {
     let metadata;
     try {
       metadata = Reflect.getMetadata('annotations', AppModule);
     } catch (e) {
       // Do nothing, we have assertions below for this case
     }
-    chai.expect(metadata[0].declarations, `Fuzzy pipe not found`).contains(FuzzyPipe);
+    chai.expect(metadata[0].declarations, `FuzzyPipe not found`).contains(FuzzyPipe);
   });
 
-  it(`video.html: 在日期属性 date 上使用管道.`, () => {
+  it(`video.html: 在日期 date 上使用管道`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     fixture.nativeElement.querySelector('button').click();

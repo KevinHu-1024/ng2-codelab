@@ -868,7 +868,7 @@ export class CodelabConfigService {
             tests: []
           }, {
             name: '使用管道',
-            description: '在程序中使用管道，需要将管道包括在module中.',
+            description: '现在在模块中添加管道, 并在程序中应用。',
             solutions: [
               files.appModule.fuzzyPipeUseSolved,
               files.videoHtml.fuzzyPipeUseSolved,
