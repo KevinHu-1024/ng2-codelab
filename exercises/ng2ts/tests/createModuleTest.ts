@@ -24,20 +24,20 @@ describe('Component', () => {
   // TODO: check if the module is exported
   // See 1-bootstrap/0-component/Test.ts
 
-  it('在该类上添加@NgModule修饰符', () => {
+  it('在该类上添加@NgModule装饰器', () => {
     chai.expect(metadata).is.not.undefined
   });
 
-  it(`在@NgModule修饰符内部导入'BrowserModule' 模块`, () => {
+  it(`在@NgModule装饰器的'imports'属性中导入'BrowserModule' 模块`, () => {
     // TODO: Figure out if this is actually needed
     chai.expect(metadata[0].imports[0]).equals(BrowserModule);
   });
 
-  it(`添加 'AppComponent' 到@NgModule修饰符的'declarations'属性中`, () => {
+  it(`添加 'AppComponent' 到@NgModule装饰器的'declarations'属性中`, () => {
     chai.expect(metadata[0].declarations[0]).equals(AppComponent);
   });
 
-  it(`添加'AppComponent' 到@NgModule修饰符的 'bootstrap'属性 `, () => {
+  it(`添加'AppComponent' 到@NgModule装饰器的 'bootstrap'属性 `, () => {
     chai.expect(metadata[0].bootstrap[0]).equals(AppComponent);
   });
 });

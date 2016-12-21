@@ -29,7 +29,7 @@ describe('Blabla', () => {
     chai.expect(header2.innerHTML, `Use the curly braces to put component title property in the header`).contains('SomethingElse');
   });
 
-  it(`app.html: 添加<input>标签，设置'placeholder'属性为'video' (提示: 'placeholder' 只是input的属性标识) `, () => {
+  it(`app.html: 添加<input>标签，设置'placeholder'属性为'video' (提示: 'placeholder' 只是input标签的HTML属性) `, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const input = fixture.nativeElement.querySelector('input');
@@ -37,7 +37,7 @@ describe('Blabla', () => {
     chai.expect(input.placeholder, `Input标签的placeholder属性应该包含'video'`).contains('video');
   });
 
-  it(`app.html: 添加标签为'search'的按钮<button>`, () => {
+  it(`app.html: 添加名为为'search'的按钮<button>`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const button = fixture.nativeElement.querySelector('button');

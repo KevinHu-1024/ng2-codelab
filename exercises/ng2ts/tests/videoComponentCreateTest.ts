@@ -26,13 +26,13 @@ beforeEach(() => {
 
 describe('组件集合', () => {
   describe('确保一些元素在相应位置', () => {
-    it(`VideoComponent.ts: 添加组件@Component修饰符并设置selector属性为'my-video'`, () => {
+    it(`VideoComponent.ts: 添加组件@Component装饰器并设置selector属性为'my-video'`, () => {
       const metadata = Reflect.getMetadata('annotations', VideoComponent);
       chai.expect(metadata, `VideoComponent doesn't have a @Component() annotation`).is.not.undefined;
       chai.expect(metadata[0].selector, `VideoComponent's selector has to be 'my-video'.`).equals('my-video')
     });
 
-    it(`VideoComponent.ts: 在组件@Component修饰符中设置templateUrl属性为存在的html页面`, () => {
+    it(`VideoComponent.ts: 在组件@Component装饰器中设置templateUrl属性为存在的html页面`, () => {
       const metadata = Reflect.getMetadata('annotations', VideoComponent);
       chai.expect(metadata, `VideoComponent doesn't have a @Component() annotation`).is.not.undefined;
       chai.expect(metadata[0].templateUrl, `VideoComponent's的 templateUrl应该设置为 './video.html'`).matches(/\.\/video\.html/)

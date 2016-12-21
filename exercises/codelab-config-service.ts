@@ -231,8 +231,10 @@ export class CodelabConfigService {
           <h1>欢迎使用Angular2和TypeScript教程!</h1>
           <p>在本教程中我们将学习TypeScript和Angular2的基础知识.</p>
           <p>本教程使用的Angular是2.1.0版本</p>
-          <p>您可以从下面的链接找到相应的英文原版PPt(暂未翻译)
-          <a href = "https://docs.google.com/presentation/d/1Wh4ZwTKG1h66f3mTD4GQO8rKwGDEJeBSvUDJ3udU1LA/edit?usp=sharing">PPT链接</a>.</p>                 
+          <p>您可以从下面的链接找到相应的英文原版PPT
+          <a target="_blank" href = "https://docs.google.com/presentation/d/1Wh4ZwTKG1h66f3mTD4GQO8rKwGDEJeBSvUDJ3udU1LA/edit?usp=sharing">PPT链接</a>.</p>
+          <p>您可以从下面的链接找到相应的中文翻译版PPT
+          <a target="_blank" href = "https://docs.google.com/presentation/d/1MiS-V1GtDsV74-ns1vAGHNCFx8jgwjz_5XVlS0Ssi7Y/edit?usp=sharing">PPT链接</a>.</p>                  
         `,
               fileTemplates: [],
               tests: [],
@@ -374,7 +376,7 @@ export class CodelabConfigService {
             },
             {
               name: '创建页面',
-              description: `在组件中加入一个header标签, 一个input文本框和一个查找按钮button !`,
+              description: `我们在app组件中加入一个头部, 一个搜索框和一个查找按钮！`,
               solutions: [
                 files.appHtml.templatePageSetupSolved
               ],
@@ -390,10 +392,10 @@ export class CodelabConfigService {
               tests: []
             }, {
               name: '添加事件',
-              description: `主要做以下2件事情: 
+              description: `我们做下面2件事: 
               <ul>
-              <li>在AppComponent中添加一个查找方法</li>
-              <li>当video对象为空时，进行适当提示</li>`,
+              <li>在AppComponent中添加一个搜索方法'search'</li>
+              <li>当没有视频被搜索到时，进行适当提示</li>`,
               solutions: [
                 files.appHtml.templateAddActionSolved,
                 files.appComponent.templateAddActionSolved,
@@ -436,8 +438,8 @@ export class CodelabConfigService {
           exercises: [{
             name: '概述',
             description: `
-          <h1>开始注入服务.</h1>
-          <p>使用服务好处是减少硬编码的耦合性，无需在对象中new引用的对象，并且我们能及时获得更多数据.</p>
+          <h1>开始注入服务</h1>
+          <p>使用服务好处是减少硬编码的耦合性，无需在对象中new引用的对象。这个例子中，我们用服务来获取更多的数据（猫）。</p>
           
           <div class = "inBrowser">
             <div class="smaller">
@@ -478,7 +480,7 @@ export class CodelabConfigService {
           }, {
             name: '服务注入',
             description: `
-          用服务来替代硬编码循（如：videos=new videos()）环数据集videos.
+          让我们使用服务来获取 videos，而不是用 FAKE_VIDEOS 写死它们（硬编码）。
         `,
             solutions: [
               files.videoService.diInjectServiceSolved,
@@ -501,7 +503,7 @@ export class CodelabConfigService {
           }]
         },
         {
-          name: '组件集合',
+          name: '组件树',
           selectedExerciseIndex: 0,
           exercises: [
             {

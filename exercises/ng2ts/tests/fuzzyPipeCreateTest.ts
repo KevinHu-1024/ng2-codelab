@@ -24,7 +24,7 @@ describe('Pipe', () => {
     chai.expect(typeof FuzzyPipe).equals('function');
   });
 
-  it('为此类添加管道修饰符 @Pipe()', () => {
+  it('为此类添加管道装饰器 @Pipe()', () => {
     chai.expect(metadata).is.an('array')
   });
 

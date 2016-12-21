@@ -39,20 +39,20 @@ describe('组件集合', () => {
   });
 
   describe('确保所有正常', () => {
-    it(`ThumbsComponent.ts: 设置@Component修饰符的selector属性为'my-thumbs'.`, () => {
+    it(`ThumbsComponent.ts: 设置@Component装饰器的selector属性为'my-thumbs'.`, () => {
       const metadata = Reflect.getMetadata('annotations', ThumbsComponent);
       chai.expect(metadata, `ThumbsComponent doesn't have a @Component() annotation`).is.not.undefined;
       chai.expect(metadata[0].selector, `ThumbsComponent's selector has to be 'my-thumbs'.`).equals('my-thumbs')
     });
 
-    it(`ThumbsComponent.ts: 设置@Component修饰符的templateUrl属性为html页面.`, () => {
+    it(`ThumbsComponent.ts: 设置@Component装饰器的templateUrl属性为html页面.`, () => {
       const metadata = Reflect.getMetadata('annotations', ThumbsComponent);
       chai.expect(metadata, `ThumbsComponent doesn't have a @Component() annotation`).is.not.undefined;
       chai.expect(metadata[0].templateUrl, `ThumbsComponent's的 templateUrl 应设置为 './thumbs.html'`).equals('./thumbs.html')
     });
 
     // TODO: split
-    it(`ThumbsComponent.ts: 添加带@Output()修饰符的'onThumbs'属性，设置值为EventEmitter `, () => {
+    it(`ThumbsComponent.ts: 添加带@Output()装饰器的'onThumbs'属性，设置值为EventEmitter `, () => {
       const metadata = Reflect.getMetadata('propMetadata', ThumbsComponent);
       chai.expect(metadata, `ThumbsComponent doesn't have any @Outputs()'s`).is.not.undefined;
       chai.expect(Object.keys(metadata).length, `ThumbsComponent doesn't have any @Outputs()'s`).equals(1);

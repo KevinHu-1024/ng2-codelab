@@ -23,15 +23,15 @@ describe('Component', () => {
     chai.expect(typeof AppComponent).equals('function');
   });
 
-  it('添加组件@Component修饰符', () => {
+  it('添加组件@Component装饰器', () => {
     chai.expect(metadata).is.not.undefined
   });
 
-  it('添加选择器selector到组件修饰符@Component中', () => {
+  it('添加选择器selector到组件装饰器@Component中', () => {
     chai.expect(metadata[0].selector).equals('my-app');
   });
 
-  it(`添加html模板到组件修饰符@Component中，如下内容: '<h1>Hello CatTube!</h1>'`, () => {
+  it(`添加html模板到组件装饰器@Component中，如下内容: '<h1>Hello CatTube!</h1>'`, () => {
     chai.expect(metadata[0].template).equals('<h1>Hello CatTube!</h1>');
   });
 });

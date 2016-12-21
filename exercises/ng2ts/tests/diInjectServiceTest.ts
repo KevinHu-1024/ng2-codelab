@@ -21,7 +21,7 @@ beforeEach(() => {
 });
 
 describe('Blabla', () => {
-  it(`VideoService.ts: 为VideoService对象添加注入 @Injectable()修饰符 `, () => {
+  it(`VideoService.ts: 为VideoService对象添加注入 @Injectable()装饰器 `, () => {
     let metadata;
     try {
       metadata = Reflect.getMetadata('parameters', VideoService);
@@ -30,7 +30,7 @@ describe('Blabla', () => {
     }
     chai.expect(metadata).not.undefined;
   });
-  it(`Appmodule.ts: 将VideoService添加到NgModule修饰符的 providers 属性`, () => {
+  it(`Appmodule.ts: 将VideoService添加到NgModule装饰器的 providers 属性`, () => {
     let metadata;
     try {
       metadata = Reflect.getMetadata('annotations', AppModule);
